@@ -1,0 +1,25 @@
+{
+  "tournaments": [
+    {
+      "id": 1,
+      "name": "Summer Ludo Championship",
+      "date": "2024-08-15",
+      "entryFee": "$10",
+      "prizePool": "$500"
+    },
+    {
+      "id": 2,
+      "name": "Monsoon Ludo Madness",
+      "date": "2024-09-01",
+      "entryFee": "$5",
+      "prizePool": "$250"
+    },
+    {
+      "id": 3,
+      "name": "Weekend Ludo Sprints",
+      "date": "2024-08-20",
+      "entryFee": "$2",
+      "prizePool": "$100"
+    }
+  ]
+}
