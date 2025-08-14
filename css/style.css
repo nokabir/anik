@@ -1,0 +1,246 @@
+/* Basic styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #ecf0f1;
+    --font-color: #34495e;
+    --border-color: #bdc3c7;
+    --red-player: #e74c3c;
+    --green-player: #2ecc71;
+    --yellow-player: #f1c40f;
+    --blue-player: #3498db;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    max-width: 400px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+form button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    opacity: 0.9;
+}
+
+/* Ludo Board */
+#ludo-board {
+    width: 600px;
+    height: 600px;
+    border: 3px solid var(--primary-color);
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 6fr 3fr 6fr;
+    grid-template-rows: 6fr 3fr 6fr;
+    gap: 1px;
+    background-color: #ccc;
+}
+
+.player-home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    padding: 20px;
+}
+
+#green-home { background-color: var(--green-player); grid-area: 1 / 1 / 2 / 2; }
+#yellow-home { background-color: var(--yellow-player); grid-area: 1 / 3 / 2 / 4; }
+#red-home { background-color: var(--red-player); grid-area: 3 / 1 / 4 / 2; }
+#blue-home { background-color: var(--blue-player); grid-area: 3 / 3 / 4 / 4; }
+
+.piece-start {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.center-area {
+    grid-area: 2 / 2 / 3 / 3;
+    background: conic-gradient(
+        var(--green-player) 0deg 90deg,
+        var(--yellow-player) 90deg 180deg,
+        var(--blue-player) 180deg 270deg,
+        var(--red-player) 270deg 360deg
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Tracks */
+.track {
+    display: grid;
+    gap: 1px;
+}
+
+#top-track { grid-area: 1 / 2 / 2 / 3; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(6, 1fr); }
+#left-track { grid-area: 2 / 1 / 3 / 2; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(3, 1fr); }
+#right-track { grid-area: 2 / 3 / 3 / 4; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(3, 1fr); }
+#bottom-track { grid-area: 3 / 2 / 4 / 3; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(6, 1fr); }
+
+.cell {
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cell-specific colors */
+.cell.start-green { background-color: var(--green-player); }
+.cell.start-yellow { background-color: var(--yellow-player); }
+.cell.start-red { background-color: var(--red-player); }
+.cell.start-blue { background-color: var(--blue-player); }
+
+.cell.home-green { background-color: var(--green-player); }
+.cell.home-yellow { background-color: var(--yellow-player); }
+.cell.home-red { background-color: var(--red-player); }
+.cell.home-blue { background-color: var(--blue-player); }
+
+.cell.safe::after {
+    content: '★';
+    font-size: 1.2em;
+    color: #000;
+}
+
+/* Pieces */
+.piece {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.piece.green { background-color: var(--green-player); }
+.piece.yellow { background-color: var(--yellow-player); }
+.piece.red { background-color: var(--red-player); }
+.piece.blue { background-color: var(--blue-player); }
+
+
+/* Game Info & Dice */
+#game-info {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#dice-container {
+    margin-top: 1rem;
+}
+
+#dice-result {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#roll-dice-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Dice Animation */
+@keyframes roll {
+    0% { transform: rotate(0deg) scale(1); opacity: 0.5; }
+    50% { transform: rotate(360deg) scale(1.4); opacity: 1; }
+    100% { transform: rotate(720deg) scale(1); opacity: 1; }
+}
+
+#dice-result.rolling {
+    display: inline-block;
+    animation: roll 1s ease-in-out;
+}
+
+/* Piece Selection Highlight */
+.piece.selected {
+    outline: 3px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
+    cursor: grab;
+}
