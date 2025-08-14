@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Game - Ludo Tournament</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Ludo Tournament</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="game.html">Play Game</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html" id="logout-link">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Ludo Game</h1>
+
+        <div id="game-container">
+            <div id="ludo-board">
+                <!-- Player 1: Green -->
+                <div class="player-home" id="green-home">
+                    <div class="piece-start"><div class="piece green"></div></div>
+                    <div class="piece-start"><div class="piece green"></div></div>
+                    <div class="piece-start"><div class="piece green"></div></div>
+                    <div class="piece-start"><div class="piece green"></div></div>
+                </div>
+
+                <!-- Top Track -->
+                <div class="track" id="top-track">
+                    <div class="cell"></div><div class="cell"></div><div class="cell safe"></div>
+                    <div class="cell start-green"></div><div class="cell home-yellow"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell home-yellow"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell home-yellow"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell home-yellow"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell home-yellow"></div><div class="cell safe"></div>
+                </div>
+
+                <!-- Player 2: Yellow -->
+                <div class="player-home" id="yellow-home">
+                    <div class="piece-start"><div class="piece yellow"></div></div>
+                    <div class="piece-start"><div class="piece yellow"></div></div>
+                    <div class="piece-start"><div class="piece yellow"></div></div>
+                    <div class="piece-start"><div class="piece yellow"></div></div>
+                </div>
+
+                <!-- Left Track -->
+                <div class="track" id="left-track">
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell safe"></div>
+                    <div class="cell home-green"></div><div class="cell home-green"></div><div class="cell home-green"></div><div class="cell home-green"></div><div class="cell home-green"></div><div class="cell"></div>
+                    <div class="cell safe"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell start-red"></div>
+                </div>
+
+                <!-- Center Goal -->
+                <div class="center-area">GOAL</div>
+
+                <!-- Right Track -->
+                <div class="track" id="right-track">
+                    <div class="cell start-yellow"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell safe"></div>
+                    <div class="cell"></div><div class="cell home-blue"></div><div class="cell home-blue"></div><div class="cell home-blue"></div><div class="cell home-blue"></div><div class="cell home-blue"></div>
+                    <div class="cell safe"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+
+                <!-- Player 3: Red -->
+                <div class="player-home" id="red-home">
+                    <div class="piece-start"><div class="piece red"></div></div>
+                    <div class="piece-start"><div class="piece red"></div></div>
+                    <div class="piece-start"><div class="piece red"></div></div>
+                    <div class="piece-start"><div class="piece red"></div></div>
+                </div>
+
+                <!-- Bottom Track -->
+                <div class="track" id="bottom-track">
+                    <div class="cell safe"></div><div class="cell home-red"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell home-red"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell home-red"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell home-red"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell home-red"></div><div class="cell start-blue"></div>
+                    <div class="cell safe"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+
+                <!-- Player 4: Blue -->
+                <div class="player-home" id="blue-home">
+                    <div class="piece-start"><div class="piece blue"></div></div>
+                    <div class="piece-start"><div class="piece blue"></div></div>
+                    <div class="piece-start"><div class="piece blue"></div></div>
+                    <div class="piece-start"><div class="piece blue"></div></div>
+                </div>
+            </div>
+            <div id="game-info">
+                <h2>Game Info</h2>
+                <p><strong>Current Turn:</strong> [Player Name]</p>
+                <div id="dice-container">
+                    <p><strong>Dice Roll:</strong> <span id="dice-result">N/A</span></p>
+                    <button id="roll-dice-btn">Roll Dice</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ludo Tournament. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
