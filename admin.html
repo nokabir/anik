@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <main>
+        <h2>Manage Tournaments</h2>
+        <form id="add-tournament-form">
+            <input type="text" id="tournament-name" placeholder="Tournament Name" required>
+            <input type="date" id="tournament-date" required>
+            <button type="submit">Add Tournament</button>
+        </form>
+        <hr>
+        <h2>Existing Tournaments</h2>
+        <div id="existing-tournaments">
+            <!-- Existing tournaments will be listed here -->
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
